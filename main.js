@@ -48,7 +48,7 @@ function componenteCard (count){
         nameInCard.classList.add("card");  //Se le añade una clase al div
 
         const pName = document.createElement("p"); //Se crea un parrafo al cual se le agrega como contenido el valor del objeto.
-        pName.textContent = `Nombre: ${namee[i]}`;
+        pName.textContent = `Nombre: ${namee[i]}`; 
         nameInCard.appendChild(pName); //Se agrega elemento a la tarjeta div creada.
 
         const pdescr = document.createElement("p");
@@ -59,12 +59,18 @@ function componenteCard (count){
         pAgeUser.textContent = `Edad: ${ageUser[i]}`;
         nameInCard.appendChild(pAgeUser);
 
-       
-
-
-
+        const ulBands = document.createElement("ul"); //Se creo un elemento de lista desordenada en el HTML
         
-        contenedor.appendChild(nameInCard); //Se agrega todos los elementos al div ppadre
+         bandList[i].map(bands => {
+            const liBand = document.createElement("li"); //Se accede al usuario en la posiscion i y se utiliza map para accader al array; se van creando los elementos li
+            liBand.textContent = bands; 
+            ulBands.appendChild(liBand);//Se agrega al elemento ul que es el padre
+        });
+
+        nameInCard.appendChild(ulBands); //Agrega todo el contenido ul al div principal
+
+    
+        contenedor.appendChild(nameInCard); //Se agrega todos los elementos al div padre
     }
 }
 

@@ -1,0 +1,11 @@
+.contenedorCards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.card{  /*Esta clase fue creada en JS*/
+    border: 5px solid black;;
+    width: 200px;
+    height: 250px;
+}
